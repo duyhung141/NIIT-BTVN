@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,18 +15,10 @@ use Illuminate\Support\Facades\DB;
 |
 */
 
-Route::get('/', function () {
-    $datas=DB::table('post_crud')->get();
-    // dd($datas[0]->name);
-    return view('show',compact('datas'));
-    
-})->name('Home');
+Route::get('/', [PostController::class,'show'])->name('Show');
 
-Route::get('/add', function () {
-    return view('add');
-})->name('Add');
+Route::get('/add', [PostController::class,'add'])->name('Add'); 
+Route::post('/do-add', [PostController::class,'doAdd'])->name('DoAdd'); 
 
-Route::get('/edit', function () {
-    $post_crudData=DB::table('post_crud')->get();
-    dd($post_crudData);
-})->name('Edit');
+Route::get('/edit', [PostController::class,'edit'])->name('Edit');
+
