@@ -40,8 +40,8 @@
                 <td>{{$data->content}}</td>
                 <td>{{$data->keyword}}</td>
                 <td>
-                    <a href="{{route('Edit')}}" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="" data-original-title="Edit">Sửa</i></a>
-                    <a href="{{route('Delete')}}" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="" data-original-title="Delete">Xóa</i></a>
+                    <a href="/edit/{{$data->id}}" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="" data-original-title="Edit">Sửa</i></a>
+                    <a href="/delete/{{$data->id}}" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="" data-original-title="Delete">Xóa</i></a>
                 </td>
             </tr>
             @endforeach
