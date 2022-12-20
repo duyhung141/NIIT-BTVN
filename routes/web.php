@@ -21,4 +21,8 @@ Route::get('/add', [PostController::class,'add'])->name('Add');
 Route::post('/do-add', [PostController::class,'doAdd'])->name('DoAdd'); 
 
 Route::get('/edit', [PostController::class,'edit'])->name('Edit');
+Route::get('/do-edit/{id}', [PostController::class,'edit'])->name('DoEdit');
+
+Route::delete('/delete/{id}', [PostController::class,'delete'])->name('Delete');
+
 
