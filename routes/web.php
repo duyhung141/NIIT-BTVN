@@ -16,13 +16,10 @@ use App\Http\Controllers\PostController;
 */
 
 Route::get('/', [PostController::class,'show'])->name('Show');
-
 Route::get('/add', [PostController::class,'add'])->name('Add'); 
 Route::post('/do-add', [PostController::class,'doAdd'])->name('DoAdd'); 
-
-Route::put('/edit/{id}', [PostController::class,'edit'])->name('Edit');
-Route::patch('/do-edit/{id}', [PostController::class,'edit'])->name('DoEdit');
-
-Route::delete('/delete/{id}', [PostController::class,'delete'])->name('Delete');
+Route::get('/edit/{id}', [PostController::class,'edit'])->name('Edit');
+Route::post('/do-edit/{id}', [PostController::class,'edit'])->name('DoEdit');
+Route::get('/delete/{id}', [PostController::class,'delete'])->name('Delete');
 
 

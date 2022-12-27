@@ -36,6 +36,7 @@ class PostController extends Controller
         $post->title=$request->title;
         $post->content=$request->content;
         $post->keyword=$request->keyword;
+        $post->user_id=0;
         $post->save();
         return redirect()->route('Show');
         
@@ -56,8 +57,8 @@ class PostController extends Controller
         return redirect()->route('Show');
     }
 
-    public function delete(int $id){
-        $post=Post::find($id);
-        $post->delete();
+    public function delete( $id){
+        Post::where('id',$id)->delete();
+        return redirect()->back()->with('success', 'Xóa thành công');
     }
 }
